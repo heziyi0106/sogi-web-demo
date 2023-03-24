@@ -1,4 +1,4 @@
-const ResultText = [
+const resultText = [
     ['01', '大展鴻圖，信用得固，無遠弗界，可獲成功', '吉'],
     ['02', '根基不固，搖搖欲墜，一盛一衰，勞而無功', '凶'],
     ['03', '根深蒂固，蒸蒸日上，如意吉祥，百事順遂', '吉'],
@@ -81,13 +81,15 @@ const ResultText = [
     ['80', '得而復失，枉費心機，守成無貪，可保安穩', '吉帶凶'],
     ['81', '最極之數，還本歸元，能得繁業，發達成功', '吉']
 ]
-console.log(ResultText);
+console.log(resultText);
 
-const phoneEl = document.querySelector("#phone-number")
-const analyticsEl = document.querySelector("#analytics")
-console.log(phoneEl, analyticsEl);
+const phoneEl = document.querySelector("#phone-number");
+const analyticsEl = document.querySelector("#analytics");
+const resultEl = document.querySelector("#result");
+const resultTextEl = document.querySelector("#result-text");
+console.log(phoneEl, analyticsEl, resultEl, resultTextEl);
 
-// phoneEl.value = "0988888888";
+phoneEl.value = "0988883456";
 
 /* 綁死在該元素上的寫法
 analyticsEl.addEventListener("click",analytics()) */
@@ -115,7 +117,22 @@ function analytics() {
     }
 
     console.log(phoneNumber);
-    analyticsPhoneNumber(phoneNumber);
+    let code = analyticsPhoneNumber(phoneNumber);
+
+    let result = (resultText[code - 1]);
+    console.log(result);
+    resultEl.innerText = result[2];
+    resultTextEl.innerText = result[1];
+
+    // js的三元運算子
+    resultEl.style.color = resultEl.innerText == "吉" || resultEl.innerText == "吉帶凶" ? "yellow" : "black";
+
+    // if (resultEl.innerText == "吉" || resultEl.innerText == "吉帶兇") {
+    //     resultEl.style.color = "yellow";
+    // } else {
+    //     resultEl.style.color = "black";
+    // }
+
 }
 
 // 0968168168 取後面四個數字
@@ -128,6 +145,11 @@ function analyticsPhoneNumber(phoneNumber) {
     console.log(parseInt(fourNumber / 80));
     // (取得除以80的結果-整數)*80
     let code = parseInt(((fourNumber / 80) - parseInt(fourNumber / 80)) * 80)
+
+    code = code < 1 ? 1 : code;
     console.log(code);
+    // if (code < 1) {
+    //     code = 1;
+    // }
     return code;
 }
