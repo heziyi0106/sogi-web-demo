@@ -1,0 +1,78 @@
+body {
+    background-color: rgb(235, 252, 246);
+}
+
+#container {
+    width: 80%;
+    margin: 24px auto;
+    text-align: center;
+}
+
+.title {
+    width: 70%;
+    background-color: cadetblue;
+    color: white;
+    padding: 20px;
+    font-size: 32px;
+    display: inline-block;
+}
+
+#timer {
+    margin-top: 12px;
+}
+
+.text-1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    font-style: italic;
+}
+
+#form {
+    background-color: red;
+    width: 80%;
+    margin: 24px auto;
+    text-align: center;
+    color: aliceblue;
+    padding: 24px 0;
+    border-radius: 12px;
+}
+
+label,
+input {
+    display: block;
+    text-align: center;
+    /*文字置中*/
+    margin: 12px auto;
+    font-size: 24px;
+}
+
+input[type="text"] {
+    font-size: 24px;
+}
+
+#result {
+    font-size: 88px;
+    font-family: 標楷體;
+    color: yellow;
+}
+
+input[type="button"] {
+    margin-top: 24px;
+    background-color: aquamarine;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+}
+
+#result-text {
+    margin-top: 24px;
+    background: #000;
+    display: inline-block;
+    font-size: 24px;
+    font-family: 新細明體;
+    color: rgb(241, 241, 179);
+    padding: 6px 24px;
+    border-radius: 8px;
+}
