@@ -76,3 +76,9 @@ input[type="button"] {
     padding: 6px 24px;
     border-radius: 8px;
 }
+
+@media screen and (max-width:768px) {
+    #container {
+        width: 100%;
+    }
+}
